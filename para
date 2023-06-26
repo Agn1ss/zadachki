@@ -1,0 +1,31 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main() {
+
+    ifstream input_file("tfile.txt");
+
+    if (input_file.is_open()) {
+
+        int count = 0;
+        string lineX, line;
+        while (getline(input_file, lineX)) {      //считаем колво строк
+            count++;
+        }
+        cout << "u faila " << count << " strok." << endl;
+
+        while (getline(input_file, line)) {
+            cout << line << endl;
+
+        }
+        input_file.close();
+    }
+    else {
+        cout << "ne udalos otkrit" << endl;
+    }
+
+    return 0;
+}
